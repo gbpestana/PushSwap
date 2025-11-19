@@ -3,18 +3,22 @@
 int	main(int argc, char **argv)
 {
 	int	i;
-	char *nbr;
-	t_list lst;
+	int j;
+	char **numbers;
+	t_list **lst_a;
 
-	if (argc == 2)
+	i = 1;
+	while (i < argc)
 	{
-		i = 0;
-		nbr = ft_split(argv[1]);
-		while (nbr[i])
+		j = 0;
+		numbers = ft_split(argv[i], ' ');
+		i++;
+		while (numbers[j])
 		{
-			//add new node
-			lst.data = ft_atoi(nbr[i]);
-			i++;
+			if (ft_is_nbr(numbers[j]))
+			{
+				*lst_a = ft_atoi(numbers[j]);
+			}
 		}
 	}
 }

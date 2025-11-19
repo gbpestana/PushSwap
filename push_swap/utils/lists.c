@@ -14,7 +14,6 @@ t_list    *last_node(t_list *lst)
 
 //     if (!lst || !new)
 //         return;
-
 //     if (!*lst)
 //     {
 //         *lst = new;

@@ -3,6 +3,7 @@
 
  # include<unistd.h>
  # include<stdlib.h>
+ # include "utils/libft/libft.h"
 
 typedef struct s_stack
 {
