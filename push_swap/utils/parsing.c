@@ -6,7 +6,7 @@
 /*   By: grodrig2 <grodrig2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 11:34:04 by grodrig2          #+#    #+#             */
-/*   Updated: 2025/12/01 13:01:46 by grodrig2         ###   ########.fr       */
+/*   Updated: 2025/12/01 16:10:22 by grodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,15 @@ int	ft_safe_atoi( char *str, bool *error)
 	sig = 1;
 	i = 0;
 	*error = false;
-	while (str[i] == ' ')
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		i++;
+	if (str[i] == '-')
+		sig = -1;
 	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			sig = -1;
 		i++;
-	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		num = num *10 + (str[i] - '0');
+		num = num * 10 + (str[i] - '0');
 		if ((sig == 1 && num > INT_MAX) || sig == -1 && num > 2147483648)
 		{
 			*error = true;
@@ -45,6 +43,7 @@ int	ft_safe_atoi( char *str, bool *error)
 
 char	**ft_split_args(char *str);
 void	ft_free_split(char **split);
+
 char	**ft_parse_input(int argc, char **argv)
 {
 	char	*joined;

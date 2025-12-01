@@ -6,7 +6,7 @@
 /*   By: grodrig2 <grodrig2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 11:28:26 by grodrig2          #+#    #+#             */
-/*   Updated: 2025/12/01 12:38:59 by grodrig2         ###   ########.fr       */
+/*   Updated: 2025/12/01 16:12:50 by grodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 bool	ft_is_valid_number(char *str)
 {
-	int	i = 0;
+	int	i;
 
-	while(str[i] == ' ')
+	i = 0;
+	while (str[i] == ' ')
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 		i++;
@@ -39,7 +40,7 @@ bool	ft_is_in_int_range(char *str)
 	return (num >= INT_MIN && num <= INT_MAX);
 }
 
-bool	ft_has_duplicates(t_stack *stack)
+bool	ft_has_duplicates(t_list *stack)
 {
 }
 
