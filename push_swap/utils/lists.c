@@ -1,4 +1,16 @@
-#include "push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   create_lists.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: grodrig2 <grodrig2@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/10 16:30:02 by grodrig2          #+#    #+#             */
+/*   Updated: 2025/12/01 11:42:02 by grodrig2         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../push_swap.h"
 
 t_list    *last_node(t_list *lst)
 {
@@ -66,20 +78,3 @@ t_list	*new_node(int data)
 	new->next = NULL;
 	return (new);
 }
-
-// int	main(void)
-// {
-// 	t_list *lst1;
-// 	t_list *lst2;
-// 	t_list *lst3;
-
-// 	lst1 = new_node(1);
-// 	lst2 = new_node(2);
-// 	lst3 = new_node(3);
-// 	lst1->next = lst2;
-// 	lst2->next = lst3;
-// 	lst3->next = NULL;
-//     printf("Tamanho da lista: %d\n", list_size(lst1));
-// 	free_list(lst1);
-//     lst1 = NULL;
-// }
