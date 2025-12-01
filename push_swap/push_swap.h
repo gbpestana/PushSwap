@@ -6,7 +6,7 @@
 /*   By: grodrig2 <grodrig2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 11:31:47 by grodrig2          #+#    #+#             */
-/*   Updated: 2025/12/01 16:06:45 by grodrig2         ###   ########.fr       */
+/*   Updated: 2025/12/01 16:35:46 by grodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ bool	ft_is_valid_number(char *str);
 bool	ft_is_in_int_range(char *str);
 bool	ft_has_duplicates(t_list *stack);
 bool	ft_validate_args(char **numbers);
+t_list	*create_stack(char **numbers);
 
 t_list	*new_node(int data);
 t_list	*last_node(t_list *lst);

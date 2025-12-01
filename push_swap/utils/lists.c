@@ -6,7 +6,7 @@
 /*   By: grodrig2 <grodrig2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 16:01:23 by grodrig2          #+#    #+#             */
-/*   Updated: 2025/12/01 16:09:18 by grodrig2         ###   ########.fr       */
+/*   Updated: 2025/12/01 16:41:18 by grodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,27 +20,35 @@ t_list	*last_node(t_list *lst)
 		lst = lst->next;
 	return (lst);
 }
-// void	add_back(t_list **lst, t_list *new)
-// {
-//     t_list  *last;
+t_list	*create_stack(char **numbers)
+{
+	t_list	*stack;
+	t_list	*new;
+	t_list	*last;
+	bool	error;
+	int		i;
 
-//     if (!lst || !new)
-//         return;
-//     if (!*lst)
-//     {
-//         *lst = new;
-//         return;
-//     }
-//     last = last_node(*lst);
-//     last->next = new;
-// }
-// void	add_front(t_list **lst, t_list *new)
-// {
-//     if (!lst || !new)
-//         return;
-//     new->next = *lst;
-//     *lst = new;
-// }
+	stack = NULL;
+	i = 0;
+	while (numbers[i])
+	{
+		new = new_node(ft_safe_atoi(numbers[i], &error));
+		if (error || !new)
+		{
+			free_list(stack);
+			error_exit();
+		}
+		if (!stack)
+			stack = new;
+		else
+		{
+			last = last_node(stack);
+			last->next = new;
+		}
+		i++;
+	}
+	return (stack);
+}
 
 int	list_size(t_list *lst)
 {
