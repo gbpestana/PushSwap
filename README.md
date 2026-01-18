@@ -49,6 +49,8 @@ Then, you return to your online tester go on *instructions* and paste the instru
 Then, you go to *simulation*, choose your time and *play*. You will visualize the sorting process.
 
 ##### Resources
+checker_linux - https://cdn.intra.42.fr/document/document/42920/checker_linux
+
 Online tester - https://push-swap42-visualizer.vercel.app/
 
 Easier to copy  -   sudo apt install wl-clipboard
