@@ -6,7 +6,7 @@
 /*   By: grodrig2 <grodrig2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 09:26:57 by grodrig2          #+#    #+#             */
-/*   Updated: 2025/12/01 16:15:24 by grodrig2         ###   ########.fr       */
+/*   Updated: 2025/08/06 13:44:43 by grodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static char	**ft_fill_arr(char **arr, const char *str, char c, unsigned int n);
 static int	ft_word(const char *str, char c);
-size_t		ft_counter_char(const char *str, char c);
+static size_t	ft_counter_char(const char *str, char c);
 static void	ft_free(char **arr, unsigned int n);
 
 static char	**ft_fill_arr(char **arr, const char *str, char c, unsigned int n)
@@ -58,7 +58,7 @@ static int	ft_word(const char *str, char c)
 	return (counter);
 }
 
-size_t	ft_counter_char(const char *str, char c)
+static size_t	ft_counter_char(const char *str, char c)
 {
 	char	*str2;
 	size_t	counter;
