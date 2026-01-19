@@ -33,7 +33,10 @@ make re *- "make fclean" followed by "make"*
 Type "make" in your push_swap root folder terminal, it will generate all object files and the executable "push_swap".
 
 ### Checker-linux
-To test with the checker, you need to download the checker from the 42School's Page and put into the project's root folder. Then you can type something like this:
+To test with the checker, you need to download the checker from the 42School's Page and put into the project's root folder. Now you have to update the permissions for the checker:
+"chmod 777 checker_linux"
+
+Then you can test something like this:
 
 "./push_swap 3 2 1 | ./checker_linux 3 2 1"
 Expected: *Ok*

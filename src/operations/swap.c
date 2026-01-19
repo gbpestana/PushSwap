@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   swap.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: grodrig2 <grodrig2@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/19 09:47:05 by grodrig2          #+#    #+#             */
+/*   Updated: 2026/01/19 14:18:42 by grodrig2         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static int	swap(t_stack **stack)
@@ -11,8 +23,6 @@ static int	swap(t_stack **stack)
 		return (-1);
 	head = *stack;
 	next = head->next;
-	if (!head && !next)
-		ft_error("Error occured while swapping!");
 	tmp_val = head->value;
 	tmp_index = head->index;
 	head->value = next->value;
