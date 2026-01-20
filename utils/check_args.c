@@ -6,7 +6,7 @@
 /*   By: grodrig2 <grodrig2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 09:45:20 by grodrig2          #+#    #+#             */
-/*   Updated: 2026/01/20 13:39:50 by grodrig2         ###   ########.fr       */
+/*   Updated: 2026/01/20 14:20:42 by grodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,24 @@ static int	ft_isnum(char *num)
 	return (1);
 }
 
+static void	check_arg(char *arg, char **args, int i)
+{
+	long long	tmp;
+
+	if (!arg || arg[0] == '\0')
+		ft_error("Error");
+	tmp = ft_atoi(arg);
+	if (!ft_isnum(args[i]))
+		ft_error("Error");
+	if (ft_contains(tmp, args, i))
+		ft_error("Error");
+	if (tmp < -2147483648 || tmp > 2147483647)
+		ft_error("Error");
+}
+
 void	ft_check_args(int argc, char **argv)
 {
 	int			i;
-	long long	tmp;
 	char		**args;	
 
 	i = 0;
@@ -60,13 +74,7 @@ void	ft_check_args(int argc, char **argv)
 	}
 	while (args[i])
 	{
-		tmp = ft_atoi(args[i]);
-		if (!ft_isnum(args[i]))
-			ft_error("Error");
-		if (ft_contains(tmp, args, i))
-			ft_error("Error");
-		if (tmp < -2147483648 || tmp > 2147483647)
-			ft_error("Error");
+		check_arg(args[i], args, i);
 		i++;
 	}
 	if (argc == 2)
