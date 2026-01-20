@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol_espec.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grodrig2 <grodrig2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/22 16:38:43 by grodrig2          #+#    #+#             */
-/*   Updated: 2026/01/20 16:49:04 by grodrig2         ###   ########.fr       */
+/*   Created: 2026/01/20 16:45:37 by grodrig2          #+#    #+#             */
+/*   Updated: 2026/01/20 16:53:52 by grodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+long	ft_atol_espec(const char *nptr)
 {
-	int	nbr;
-	int	signal;
+	long	nbr;
+	int		signal;
 
 	nbr = 0;
 	signal = 1;
@@ -23,6 +23,8 @@ int	ft_atoi(const char *nptr)
 		nptr++;
 	if (*nptr == '-')
 	{
+		if (!ft_isdigit(*(nptr + 1)))
+			return (21474836470);
 		signal *= -1;
 		nptr++;
 	}
@@ -33,5 +35,5 @@ int	ft_atoi(const char *nptr)
 		nbr = (nbr * 10) + ((int)*nptr - '0');
 		nptr++;
 	}
-	return (nbr * signal);
+	return (nbr * (long)signal);
 }

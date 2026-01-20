@@ -6,7 +6,7 @@
 /*   By: grodrig2 <grodrig2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 09:45:20 by grodrig2          #+#    #+#             */
-/*   Updated: 2026/01/20 14:20:42 by grodrig2         ###   ########.fr       */
+/*   Updated: 2026/01/20 16:52:01 by grodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,11 @@ static int	ft_isnum(char *num)
 
 static void	check_arg(char *arg, char **args, int i)
 {
-	long long	tmp;
+	long	tmp;
 
 	if (!arg || arg[0] == '\0')
 		ft_error("Error");
-	tmp = ft_atoi(arg);
+	tmp = ft_atol_espec(arg);
 	if (!ft_isnum(args[i]))
 		ft_error("Error");
 	if (ft_contains(tmp, args, i))
