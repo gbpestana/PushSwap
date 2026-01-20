@@ -6,7 +6,7 @@
 /*   By: grodrig2 <grodrig2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 09:45:20 by grodrig2          #+#    #+#             */
-/*   Updated: 2026/01/19 09:45:21 by grodrig2         ###   ########.fr       */
+/*   Updated: 2026/01/20 13:39:50 by grodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,17 @@ static int	ft_isnum(char *num)
 
 void	ft_check_args(int argc, char **argv)
 {
-	int		i;
-	long	tmp;
-	char	**args;	
+	int			i;
+	long long	tmp;
+	char		**args;	
 
 	i = 0;
 	if (argc == 2)
+	{
 		args = ft_split(argv[1], ' ');
+		if (!args || !args[0])
+			ft_error("Error");
+	}
 	else
 	{
 		i = 1;

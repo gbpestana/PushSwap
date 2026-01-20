@@ -6,16 +6,16 @@
 /*   By: grodrig2 <grodrig2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 16:38:43 by grodrig2          #+#    #+#             */
-/*   Updated: 2025/07/23 14:50:54 by grodrig2         ###   ########.fr       */
+/*   Updated: 2026/01/20 13:53:23 by grodrig2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+long long	ft_atoi(const char *nptr)
 {
-	int	nbr;
-	int	signal;
+	long long	nbr;
+	int			signal;
 
 	nbr = 0;
 	signal = 1;
@@ -23,6 +23,8 @@ int	ft_atoi(const char *nptr)
 		nptr++;
 	if (*nptr == '-')
 	{
+		if (!ft_isdigit(*(nptr + 1)))
+			return (21474836470);
 		signal *= -1;
 		nptr++;
 	}
@@ -33,5 +35,5 @@ int	ft_atoi(const char *nptr)
 		nbr = (nbr * 10) + ((int)*nptr - '0');
 		nptr++;
 	}
-	return (nbr * signal);
+	return (nbr * (long long)signal);
 }
